@@ -21,4 +21,9 @@ class Menu extends Model
         return $this->belongsToMany('App\Cart', 'CartItem')
             ->withPivot('quantity');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

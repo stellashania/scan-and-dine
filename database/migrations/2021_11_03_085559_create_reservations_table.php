@@ -21,7 +21,7 @@ class CreateReservationsTable extends Migration
             $table->foreign('table_id')->references('id')->on('tables')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('pax');
             $table->date('date');
-            $table->time('time');
+            $table->string('time');
             $table->integer('code');
             $table->timestamps();
         });

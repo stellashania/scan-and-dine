@@ -21,7 +21,7 @@ class MenuSeeder extends Seeder
             'description' => 'This is chinese food',
             'price' => 50000,
             'image' => 'dimsum.jpeg',
-            'active' => 'true'
+            'active' => True
         ]);
 
         Menu::create([
@@ -30,7 +30,7 @@ class MenuSeeder extends Seeder
             'description' => 'This is western food',
             'price' => 75000,
             'image' => 'burger.jpeg',
-            'active' => 'true'
+            'active' => True
         ]);
     }
 }

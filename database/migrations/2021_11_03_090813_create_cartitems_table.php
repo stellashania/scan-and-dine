@@ -13,7 +13,7 @@ class CreateCartitemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cartitems', function (Blueprint $table) {
+        Schema::create('cart_items', function (Blueprint $table) {
             $table->unsignedBigInteger('cart_id');
             $table->foreign('cart_id')->references('id')->on('carts')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('menu_id');

@@ -13,7 +13,7 @@ class CreateTransactiondetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactiondetails', function (Blueprint $table) {
+        Schema::create('transaction_details', function (Blueprint $table) {
             $table->unsignedBigInteger('transaction_id');
             $table->foreign('transaction_id')->references('id')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('menu_id');

@@ -1,4 +1,4 @@
-<?php
+2000-01-01<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

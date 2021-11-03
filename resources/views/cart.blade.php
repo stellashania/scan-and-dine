@@ -43,7 +43,7 @@
                 </tr>
             </table>
 
-            <h3 class="my-4">Total: Rp 100.000</h3>
+            <h3 class="my-4">Total: Rp 100.000p</h3>
 
             <form action="" method="POST">
                 <input type="submit" name="submit" value="Pay Bill" class="btn btn-success mb-4">

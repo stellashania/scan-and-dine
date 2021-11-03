@@ -18,13 +18,13 @@ class CategorySeeder extends Seeder
         Category::create([
             'name' => 'Asian',
             'image' => 'dimsum.jpeg',
-            'active' => 'true'
+            'active' => True
         ]);
         
         Category::create([
             'name' => 'Western',
             'image' => 'burger.jpeg',
-            'active' => 'true'
+            'active' => False
         ]);
     }
 }

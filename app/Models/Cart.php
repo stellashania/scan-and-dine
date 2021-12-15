@@ -17,7 +17,7 @@ class Cart extends Model
 
     public function menus()
     {
-        return $this->belongsToMany('App\Menu', 'cart_items')
+        return $this->belongsToMany(Menu::class, 'cart_items')
             ->withPivot('quantity');
     }
 }

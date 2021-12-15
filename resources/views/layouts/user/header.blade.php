@@ -40,7 +40,7 @@
                             <a href="/home" class="navbar-text mr-2">Home</a>
                             <a href="/reservation" class="navbar-text mr-2">Reservation</a>
                             <a href="/category" class="navbar-text mr-2">Category</a>
-                            <a href="/locked-menu" class="navbar-text mr-2">Menu</a>
+                            <a href="/menu" class="navbar-text mr-2">Menu</a>
                             <a href="/cart" class="navbar-text mr-2">Cart</a>
 
                             <li class="nav-item dropdown">
@@ -51,7 +51,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

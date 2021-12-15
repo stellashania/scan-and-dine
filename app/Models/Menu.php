@@ -12,13 +12,13 @@ class Menu extends Model
 
     public function transactions()
     {
-        return $this->belongsToMany('App\Transaction', 'transaction_details')
+        return $this->belongsToMany(Transaction::menu, 'transaction_details')
             ->withPivot('quantity');
     }
 
     public function carts()
     {
-        return $this->belongsToMany('App\Cart', 'cart_items')
+        return $this->belongsToMany(Cart::class, 'cart_items')
             ->withPivot('quantity');
     }
 

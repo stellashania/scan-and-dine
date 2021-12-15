@@ -25,7 +25,7 @@
                     @foreach ($item->menus as $i)
                         <tr>
                             <td class="col-md-1">{{ $idx++ }}.</td>
-                            <td class="col-md-2">{{ i->name }}</td>
+                            <td class="col-md-2">{{ $i->name }}</td>
                             <td class="col-md-2">{{ $i->pivot->quantity }}</td>
                             <td class="col-md-2">Rp. {{ $i->price }}</td>
                             <td class="col-md-2">
@@ -36,7 +36,7 @@
                             </td>
                             <td class="col-md-3">
                                 <div class="d-inline-flex">
-                                    <a href="/update-cart-item/{{ $i->pivot->cart_id }}/{{ $i->pivot->menu_Id }}"
+                                    <a href="/edit-cart-item/{{ $i->pivot->cart_id }}/{{ $i->pivot->menu_id }}"
                                         class="btn btn-warning btn-sm px-2 mr-1 shadow-sm">
                                         Update
                                     </a>

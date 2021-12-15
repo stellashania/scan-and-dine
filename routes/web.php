@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\paymentController;
 use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
@@ -21,13 +23,23 @@ use Illuminate\Support\Facades\Route;
 
 // CART
 Route::get('/cart', [CartController::class, 'displayAll'])->middleware('role:member')->name('view-cart');
-// Route::post('/add-cart-item', [CartDetailController::class, 'addItem'])->middleware('role:member');
-Route::post('/delete-cart-item/{cart_id}/{menu_id}', [CartDetailController::class, 'deleteItem'])->middleware('role:member');
-Route::get('/update-cart-item/{cart_id}/{menu_id}', [CartDetailController::class, 'getUpdateItemPage'])->middleware('role:member');
-Route::post('/update-cart-item/{cart_id}/{menu_id}', [CartDetailController::class, 'updateItem'])->middleware('role:member');
+// Route::post('/add-cart-item', [CartItemController::class, 'addItem'])->middleware('role:member');
+Route::post('/delete-cart-item/{cart_id}/{menu_id}', [CartItemController::class, 'deleteItem'])->middleware('role:member');
+Route::get('/edit-cart-item/{cart_id}/{menu_id}', [CartItemController::class, 'getUpdateItemPage'])->middleware('role:member');
+Route::post('/edit-cart-item/{cart_id}/{menu_id}', [CartItemController::class, 'updateItem'])->middleware('role:member');
 
 // AUTH
 Auth::routes();
+
+// HOME
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// MENU
+Route::get('/menu', [MenuController::class, 'viewCategory']);
+Route::get('/menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
+
+// PAYMENT
+Route::get('/paymentForm', [paymentController::class, 'payForm']);
 
 Route::get('/manage-admin', function () {
     return view('manage-admin');
@@ -60,8 +72,6 @@ Route::get('/add-menu', function () {
 Route::get('/manage-order', function () {
     return view('manage-order');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('/user-home', function () {
@@ -100,12 +110,7 @@ Route::get('/reservation', function () {
 // Route::get('/menu', function () {
 //     return view('menu');
 // });
-Route::get('/menu', [MenuController::class, 'viewCategory']);
-Route::get('/menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
 
-
-Route::get('/paymentForm', [paymentController::class, 'payForm']);
-
-Route::get('/cart', function () {
-    return view('cart');
-});
+// Route::get('/cart', function () {
+//     return view('cart');
+// });

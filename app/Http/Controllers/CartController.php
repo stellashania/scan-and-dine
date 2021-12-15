@@ -18,6 +18,8 @@ class CartController extends Controller
 
         $cart = $chosen_cart::with('menus')->get();
 
-        return view('view-cart', compact('cart'));
+        // dd(cart);
+
+        return view('cart', compact('cart'));
     }
 }

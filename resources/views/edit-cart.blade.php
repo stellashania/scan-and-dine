@@ -6,13 +6,13 @@
         <div class="container-fluid justify-content-center">
             <h1 class="my-4">Edit Cart Item</h1>
 
-            <div class="row" style="height: 400px">
+            <div class="row" {{-- style="height: 400px" --}}>
                 <div class="col-sm-6">
                     <div class="col-sm-4">
                         <div class="card h-100 border-0">
                             <div class="text-white" style="background-color: rgba(187, 159, 106, 0.5)">
                                 <div class="card-body">
-                                    <img src="../storage/assets/{{ $menu->image }}" alt="" width="100%" height="75%">
+                                    <img src="/storage/assets/menus/{{ $menu->image }}" alt="" width="100%" height="75%">
                                     <h3 class="card-title mt-3">{{ $menu->name }}</h3>
                                     <p class="card-text">{{ $menu->description }}</p>
                                 </div>

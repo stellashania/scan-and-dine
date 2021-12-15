@@ -17,7 +17,7 @@ class Transaction extends Model
 
     public function menus()
     {
-        return $this->belongsToMany('App\Menu', 'transaction_details')
+        return $this->belongsToMany(Menu::class, 'transaction_details')
             ->withPivot('quantity');
     }
 }

@@ -54,7 +54,32 @@
 
         <div class="container">
             <div class="row" style="height: 400px">
-                <div class="col-sm-4">
+                {{-- foreach --}}
+                @forelse ( $menus as $menu )
+                    <div class="col-sm-4">
+                        <div class="card card-flip h-100 border-0">
+                            <div class="card-front text-white" style="background-color: rgba(187, 159, 106, 0.5)">
+                                <div class="card-body">
+                                    <img src="../storage/assets/menus/{{$menu->image}}" alt="" width="100%" height="75%">
+                                    <h3 class="card-title mt-3">{{$menu->name}}</h3>
+                                    <p class="card-text my-0">{{$menu->description}}</p>
+                                    <p class="card-text my-0">{{$menu->price}}</p>
+                                </div>
+                            </div>
+
+                            <div class="card-back text-white">
+                                <div class="card-body" style="background-color: rgba(187, 159, 106, 0.5)">
+                                    <img src="../storage/assets/menus/{{$menu->image}}" alt="" width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty                    
+                    <h1 class="my-3">No Item</h1>
+                @endforelse
+               
+                {{-- endforeach --}}
+                {{-- <div class="col-sm-4">
                     <div class="card card-flip h-100 border-0">
                         <div class="card-front text-white" style="background-color: rgba(187, 159, 106, 0.5)">
                             <div class="card-body">
@@ -88,25 +113,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="card card-flip h-100 border-0">
-                        <div class="card-front text-white" style="background-color: rgba(187, 159, 106, 0.5)">
-                            <div class="card-body">
-                                <img src="../storage/assets/ketoprak.jpg" alt="" width="100%" height="75%">
-                                <h3 class="card-title mt-3">Ketoprak</h3>
-                                <p class="card-text">Very delicious</p>
-                            </div>
-                        </div>
-
-                        <div class="card-back text-white">
-                            <div class="card-body" style="background-color: rgba(187, 159, 106, 0.5)">
-                                <img src="../storage/assets/ketoprak.jpg" alt="" width="100%" height="100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>

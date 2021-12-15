@@ -45,7 +45,7 @@
 
             <h3 class="my-4">Total: Rp 100.000p</h3>
 
-            <form action="" method="POST">
+            <form action="paymentForm" method="GET">
                 <input type="submit" name="submit" value="Pay Bill" class="btn btn-success mb-4">
             </form>
         </div>

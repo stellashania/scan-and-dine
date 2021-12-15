@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\paymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,3 +78,5 @@ Route::get('/menu', function(){
 Route::get('/cart', function(){
     return view ('cart');
 });
+
+Route::get('/paymentForm', [paymentController::class, 'payForm']);

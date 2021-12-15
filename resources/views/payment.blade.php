@@ -8,50 +8,55 @@
     </div>
 </div>    
 
-<div class="btn-group-vertical" role="group" aria-label="Vertical button group" style="margin-left: 44rem;">
-    <input
-      type="radio"
-      class="btn-check"
-      name="options"
-      id="option1"
-      autocomplete="off"
-    />
-    <label class="btn btn-outline-primary btn-lg" for="option1">
-      <div class="d-flex justify-content-between">
-        <span>VISA CARD</span>
-      </div>
-    </label>
-
-    <input
-      type="radio"
-      class="btn-check"
-      name="options"
-      id="option2"
-      autocomplete="off"
-      checked
-    />
-    <label class="btn btn-outline-primary btn-lg" for="option2">
-      <div class="d-flex justify-content-between">
-        <span>CASH </span>
-      </div>
-    </label>
-
-    <input
-      type="radio"
-      class="btn-check"
-      name="options"
-      id="option2"
-      autocomplete="off"
-      checked
-    />
-    <label class="btn btn-outline-primary btn-lg" for="option2">
-      <div class="d-flex justify-content-between">
-        <span>E-MONEY </span>
-      </div>
-    </label>
-</div>
-<div class="text-center">
-    <button type="button" class="btn btn-success">Pay</button>
-</div>
+<form action="" method="">
+    <div class="btn-group-vertical" role="group" aria-label="Vertical button group" style="margin-left: 44rem;">
+        <input
+          type="radio"
+          class="btn-check"
+          name="payment_method"
+          id="option1"
+          autocomplete="off"
+          value=""
+        />
+        <label class="btn btn-outline-primary btn-lg" for="option1">
+          <div class="d-flex justify-content-between">
+            <span>VISA CARD</span>
+          </div>
+        </label>
+    
+        <input
+          type="radio"
+          class="btn-check"
+          name="payment_method"
+          id="option2"
+          autocomplete="off"
+          value=""
+          checked
+        />
+        <label class="btn btn-outline-primary btn-lg" for="option2">
+          <div class="d-flex justify-content-between">
+            <span>CASH </span>
+          </div>
+        </label>
+    
+        <input
+          type="radio"
+          class="btn-check"
+          name="payment_method"
+          id="option3"
+          autocomplete="off"
+          value=""
+          checked
+        />
+        <label class="btn btn-outline-primary btn-lg" for="option3">
+          <div class="d-flex justify-content-between">
+            <span>E-MONEY </span>
+          </div>
+        </label>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-success">Pay</button>
+    </div>
+</form>
 
 @endsection

@@ -18,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// CART
+Route::get('/cart', [CartController::class, 'displayAll'])->middleware('role:member')->name('view-cart');
+// Route::post('/add-cart-item', [CartDetailController::class, 'addItem'])->middleware('role:member');
+Route::post('/delete-cart-item/{cart_id}/{menu_id}', [CartDetailController::class, 'deleteItem'])->middleware('role:member');
+Route::get('/update-cart-item/{cart_id}/{menu_id}', [CartDetailController::class, 'getUpdateItemPage'])->middleware('role:member');
+Route::post('/update-cart-item/{cart_id}/{menu_id}', [CartDetailController::class, 'updateItem'])->middleware('role:member');
+
+// AUTH
 Auth::routes();
 
 Route::get('/manage-admin', function () {
@@ -55,28 +63,28 @@ Route::get('/manage-order', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/user-home', function(){
-    return view ('user-home');
+Route::get('/user-home', function () {
+    return view('user-home');
 });
 
-Route::get('/reservation', function(){
-    return view ('reservation');
+Route::get('/reservation', function () {
+    return view('reservation');
 });
 
-Route::get('/category', function(){
-    return view ('category');
+Route::get('/category', function () {
+    return view('category');
 });
 
-Route::get('/locked-menu', function(){
-    return view ('locked-menu');
+Route::get('/locked-menu', function () {
+    return view('locked-menu');
 });
 
-Route::get('/menu', function(){
-    return view ('menu');
+Route::get('/menu', function () {
+    return view('menu');
 });
 
-Route::get('/cart', function(){
-    return view ('cart');
+Route::get('/cart', function () {
+    return view('cart');
 });
 
 Route::get('/paymentForm', [paymentController::class, 'payForm']);

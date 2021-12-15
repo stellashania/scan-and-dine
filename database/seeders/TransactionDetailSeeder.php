@@ -14,10 +14,10 @@ class TransactionDetailSeeder extends Seeder
      */
     public function run()
     {
-        TransactionDetail::create([
-            'transaction_id' => 1,
-            'menu_Id' => 1,
-            'quantity' => 4
-        ]);
+        // TransactionDetail::create([
+        //     'transaction_id' => 1,
+        //     'menu_Id' => 1,
+        //     'quantity' => 4
+        // ]);
     }
 }

@@ -16,15 +16,18 @@ class CategorySeeder extends Seeder
     {
         //
         Category::create([
-            'name' => 'Asian',
-            'image' => 'dimsum.jpeg',
-            'active' => True
+            'name' => 'Food',
+            'image' => 'makanan_padang.jpg',
         ]);
         
         Category::create([
-            'name' => 'Western',
-            'image' => 'burger.jpeg',
-            'active' => False
+            'name' => 'Drink',
+            'image' => 'minuman.jpg',
+        ]);
+
+        Category::create([
+            'name' => 'Dessert',
+            'image' => 'dessert.jpg',
         ]);
     }
 }

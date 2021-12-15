@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -29,7 +30,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function redirectTo()
+    {
+        return '/login';
+    }
 
     /**
      * Create a new controller instance.
@@ -53,7 +59,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'string', 'max:15'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
     }
 
@@ -65,11 +71,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'phone' => $data['phone'],
+        //     'password' => Hash::make($data['password']),
+        //     'role' => 'member'
+        // ]);
+
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'email' => $data['phone'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
+            'role' => 'member'
         ]);
+
+        Cart::create([
+            'user_id' => $user->id
+        ]);
+
+        return $user;
     }
 }

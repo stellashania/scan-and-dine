@@ -38,9 +38,9 @@
                             @endif
                         @else
                             <a href="/home" class="navbar-text mr-3">Home</a>
-                            <a href="/reservation" class="navbar-text mr-3">Reservation</a>
+                            <a href="{{url('reservation')}}" class="navbar-text mr-3">Reservation</a>
                             <a href="/menu" class="navbar-text mr-3">Menu</a>
-                            <a href="/cart" class="navbar-text mr-3">Cart</a>
+                            <a href="{{url('cart')}}" class="navbar-text mr-3">Cart</a>
                             <a href="/cart" class="navbar-text mr-3">My Transactions</a>
 
                             <li class="nav-item dropdown">

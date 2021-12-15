@@ -32,7 +32,7 @@
                                     Edit Quantity
                                 </label>
                                 <input type="text" id="quantity" name="quantity"
-                                    class="form-control @error('quantity') is-invalid @enderror">
+                                    class="form-control @error('quantity') is-invalid @enderror" value="{{$qty}}">
 
                                 @error('quantity')
                                     <div class="alert">{{ $message }}

@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\paymentController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,6 +75,7 @@ Route::get('/manage-order', function () {
 });
 
 
+
 Route::get('/user-home', function () {
     return view('user-home');
 });
@@ -111,6 +113,30 @@ Route::get('/reservation', function () {
 //     return view('menu');
 // });
 
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
+Route::get('/reservation', [ReservationController::class, 'index']);
+Route::get('/select-table', [ReservationController::class, 'selectTable']);
+Route::post('/add-reservation', [ReservationController::class, 'addReservation']);
+
+Route::get('/category', function () {
+    return view('category');
+});
+
+Route::get('/locked-menu', function () {
+    return view('locked-menu');
+});
+
+Route::get('/menu', function () {
+    return view('menu');
+});
+
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
+
+Route::get('/paymentForm', [paymentController::class, 'payForm']);
 // Route::get('/cart', function () {
 //     return view('cart');
 // });

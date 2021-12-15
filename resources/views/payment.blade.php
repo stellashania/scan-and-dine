@@ -14,8 +14,9 @@
           type="radio"
           class="btn-check"
           name="payment_method"
-          id="payment_method"
+          id="option1"
           autocomplete="off"
+          value=""
         />
         <label class="btn btn-outline-primary btn-lg" for="option1">
           <div class="d-flex justify-content-between">
@@ -27,8 +28,9 @@
           type="radio"
           class="btn-check"
           name="payment_method"
-          id="payment_method"
+          id="option2"
           autocomplete="off"
+          value=""
           checked
         />
         <label class="btn btn-outline-primary btn-lg" for="option2">
@@ -41,11 +43,12 @@
           type="radio"
           class="btn-check"
           name="payment_method"
-          id="payment_method"
+          id="option3"
           autocomplete="off"
+          value=""
           checked
         />
-        <label class="btn btn-outline-primary btn-lg" for="option2">
+        <label class="btn btn-outline-primary btn-lg" for="option3">
           <div class="d-flex justify-content-between">
             <span>E-MONEY </span>
           </div>

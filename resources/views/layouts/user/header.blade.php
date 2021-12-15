@@ -39,7 +39,6 @@
                         @else
                             <a href="/home" class="navbar-text mr-2">Home</a>
                             <a href="/reservation" class="navbar-text mr-2">Reservation</a>
-                            <a href="/category" class="navbar-text mr-2">Category</a>
                             <a href="/menu" class="navbar-text mr-2">Menu</a>
                             <a href="/cart" class="navbar-text mr-2">Cart</a>
 

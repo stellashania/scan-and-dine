@@ -48,7 +48,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="active" id="active" value="Yes" checked>
+                        <input class="form-check-input" type="radio" name="active" id="active" value="No" checked>
                         <label class="form-check-label" for="active">
                           No
                         </label>

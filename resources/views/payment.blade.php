@@ -1,11 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="m-4 pt-3 pl-5 pr-5 pb-3" style="background-color: #eee;">
+<div class="mt-4 pt-3 pl-5 pr-5 pb-3" style="background-color: #eee; margin-top: 4rem;">
     <span class="fw-bold">Order Recap</span>
+    @php
+        $ttlPrice = 0;
+    @endphp
+    @foreach ($cart as $item)
+        @foreach ($item->menus as $i)
+        <div class="d-flex justify-content-between mt-2">
+            <span>{{$i->name}}</span> <span>Rp. {{$i->price}}</span>
+            @php
+                $ttlPrice += $i->price * $i->pivot->quantity;
+            @endphp
+        </div>
+        @endforeach
+    @endforeach
     <div class="d-flex justify-content-between mt-2">
-      <span>Burger</span> <span>Rp. 100.000</span>
+        <span>Total </span> <span class="text-success">Rp. {{$ttlPrice}}</span>
+      </div>
+    {{-- <div class="d-flex justify-content-between mt-2">
+        <span>Burger</span> <span>Rp. 100.000</span>
     </div>
+    <div class="d-flex justify-content-between mt-2">
+        <span>Total </span> <span class="text-success">$85.00</span>
+      </div> --}}
 </div>    
 
 <form action="" method="">

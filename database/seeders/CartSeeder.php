@@ -14,7 +14,6 @@ class CartSeeder extends Seeder
      */
     public function run()
     {
-        //
         Cart::create([
             'user_id' => 2
         ]);

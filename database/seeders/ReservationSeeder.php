@@ -21,9 +21,7 @@ class ReservationSeeder extends Seeder
             'pax' => 3,
             'date' => '2000-01-01',
             'time' => '03:42:21',
-            'code' => 0001
+            'code' => '00001'
         ]);
     }
-
-
 }

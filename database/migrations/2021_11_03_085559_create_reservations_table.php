@@ -22,7 +22,7 @@ class CreateReservationsTable extends Migration
             $table->integer('pax');
             $table->date('date');
             $table->string('time');
-            $table->integer('code');
+            $table->string('code');
             $table->timestamps();
         });
     }

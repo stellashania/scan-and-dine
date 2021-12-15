@@ -8,13 +8,13 @@
     </div>
 </div>    
 
-<form action="">
+<form action="" method="">
     <div class="btn-group-vertical" role="group" aria-label="Vertical button group" style="margin-left: 44rem;">
         <input
           type="radio"
           class="btn-check"
-          name="options"
-          id="option1"
+          name="payment_method"
+          id="payment_method"
           autocomplete="off"
         />
         <label class="btn btn-outline-primary btn-lg" for="option1">
@@ -26,8 +26,8 @@
         <input
           type="radio"
           class="btn-check"
-          name="options"
-          id="option2"
+          name="payment_method"
+          id="payment_method"
           autocomplete="off"
           checked
         />
@@ -40,8 +40,8 @@
         <input
           type="radio"
           class="btn-check"
-          name="options"
-          id="option2"
+          name="payment_method"
+          id="payment_method"
           autocomplete="off"
           checked
         />

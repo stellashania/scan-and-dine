@@ -7,9 +7,11 @@
                     Scan and Dine
                 </a>
 
-                <img src="../storage/assets/logo.png"  style="width: 5%" alt="">
+                <img src="../storage/assets/logo.png" style="width: 5%" alt="">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -35,25 +37,26 @@
                                 </li>
                             @endif
                         @else
-                            <a href="user-home" class="navbar-text mr-2">Home</a>
-                            <a href="reservation" class="navbar-text mr-2">Reservation</a>
-                            <a href="category" class="navbar-text mr-2">Category</a>
-                            <a href="locked-menu" class="navbar-text mr-2">Menu</a>
-                            <a href="cart" class="navbar-text mr-2">Cart</a>
+                            <a href="/home" class="navbar-text mr-2">Home</a>
+                            <a href="/reservation" class="navbar-text mr-2">Reservation</a>
+                            <a href="/category" class="navbar-text mr-2">Category</a>
+                            <a href="/locked-menu" class="navbar-text mr-2">Menu</a>
+                            <a href="/cart" class="navbar-text mr-2">Cart</a>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>

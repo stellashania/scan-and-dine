@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
     <!-- main content section starts here -->
@@ -24,14 +24,12 @@
                     <td class="col-md-2">Nasi Uduk</td>
                     <td class="col-md-2">Rp 50.000</td>
                     <td class="col-md-2">
-                        <img src="../storage/assets/ketoprak.jpg" width="100%"  alt="">
+                        <img src="../storage/assets/ketoprak.jpg" width="100%" alt="">
                     </td>
                     <td class="col-md-1">Yes</td>
                     <td class="col-md-5">
-                        <a href="#"
-                            class="btn btn-success shadow-sm">Update Menu</a>
-                        <a href="#"
-                            class="btn btn-danger shadow-sm">Delete Menu</a>
+                        <a href="#" class="btn btn-success shadow-sm">Update Menu</a>
+                        <a href="#" class="btn btn-danger shadow-sm">Delete Menu</a>
                     </td>
                 </tr>
 
@@ -40,18 +38,16 @@
                     <td class="col-md-2">Nasi Uduk</td>
                     <td class="col-md-1">Rp 50.000</td>
                     <td class="col-md-2">
-                        <img src="../storage/assets/ketoprak.jpg" width="100%"  alt="">
+                        <img src="../storage/assets/ketoprak.jpg" width="100%" alt="">
                     </td>
                     <td class="col-md-1">Yes</td>
                     <td class="col-md-4">
-                        <a href="#"
-                            class="btn btn-success shadow-sm">Update Menu</a>
-                        <a href="#"
-                            class="btn btn-danger shadow-sm">Delete Menu</a>
+                        <a href="#" class="btn btn-success shadow-sm">Update Menu</a>
+                        <a href="#" class="btn btn-danger shadow-sm">Delete Menu</a>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-<!-- main content section ends here -->
+    <!-- main content section ends here -->
 @endsection

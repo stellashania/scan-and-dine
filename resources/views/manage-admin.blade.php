@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
     <!-- main content section starts here -->
@@ -24,12 +24,9 @@
                     <td class="col-md-2">stello@gmail.com</td>
                     <td class="col-md-1">123455689</td>
                     <td class="col-md-6">
-                        <a href="#"
-                            class="btn btn-primary shadow-sm">Change Password</a>
-                        <a href="#"
-                            class="btn btn-success shadow-sm">Update Admin</a>
-                        <a href="#"
-                            class="btn btn-danger shadow-sm">Delete Admin</a>
+                        <a href="#" class="btn btn-primary shadow-sm">Change Password</a>
+                        <a href="#" class="btn btn-success shadow-sm">Update Admin</a>
+                        <a href="#" class="btn btn-danger shadow-sm">Delete Admin</a>
                     </td>
                 </tr>
 
@@ -39,16 +36,13 @@
                     <td class="col-md-2">stello@gmail.com</td>
                     <td class="col-md-1">123455689</td>
                     <td class="col-md-6">
-                        <a href="#"
-                            class="btn btn-primary shadow-sm">Change Password</a>
-                        <a href="#"
-                            class="btn btn-success shadow-sm">Update Admin</a>
-                        <a href="#"
-                            class="btn btn-danger shadow-sm">Delete Admin</a>
+                        <a href="#" class="btn btn-primary shadow-sm">Change Password</a>
+                        <a href="#" class="btn btn-success shadow-sm">Update Admin</a>
+                        <a href="#" class="btn btn-danger shadow-sm">Delete Admin</a>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-<!-- main content section ends here -->
+    <!-- main content section ends here -->
 @endsection

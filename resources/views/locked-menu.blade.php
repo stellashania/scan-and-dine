@@ -1,14 +1,14 @@
-@extends('layouts.user.app')
+@extends('layouts.app')
 
 <style>
-    .card-flip > div {
-    backface-visibility: hidden;
-    transition: transform 300ms;
-    transition-timing-function: linear;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
+    .card-flip>div {
+        backface-visibility: hidden;
+        transition: transform 300ms;
+        transition-timing-function: linear;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: flex;
     }
 
     .card-front {
@@ -28,6 +28,7 @@
     .card-flip:hover .card-back {
         transform: rotateY(0deg);
     }
+
 </style>
 
 @section('content')
@@ -38,17 +39,17 @@
         </div>
 
         <div class="container-fluid justify-content-center mb-5 border w-50">
-                <form action="" method="POST">
-                    <div class="form-outline mb-4">
-                        <label class="form-label mt-3" for="code">
-                            Enter the Code from Our Staff to Unlock the Ordering Feature
-                        </label>
-                        <input type="text" id="code" class="form-control">
-                    </div>
+            <form action="" method="POST">
+                <div class="form-outline mb-4">
+                    <label class="form-label mt-3" for="code">
+                        Enter the Code from Our Staff to Unlock the Ordering Feature
+                    </label>
+                    <input type="text" id="code" class="form-control">
+                </div>
 
-                    {{-- <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4"> --}}
-                    <a href="menu" class="btn btn-success mb-4">Unlock</a>
-                </form>
+                {{-- <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4"> --}}
+                <a href="menu" class="btn btn-success mb-4">Unlock</a>
+            </form>
         </div>
 
         <div class="container">

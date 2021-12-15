@@ -1,4 +1,4 @@
-@extends('layouts.user.app')
+@extends('layouts.app')
 
 @section('content')
     <!-- main content section starts here -->
@@ -21,7 +21,7 @@
                     <label for="time" class="form-label text-md-right">Time</label>
                     <input type="time" id="time" name="time" class="form-control">
                 </div>
-                
+
                 <div class="form-outline mb-4">
                     <label for="table" class="form-label text-md-right">Table Number</label>
                     <select name="table" id="table" class="form-control">
@@ -35,7 +35,7 @@
 
                 <input type="submit" name="submit" value="Book Now" class="btn btn-success mb-4">
             </form>
-            
+
         </div>
     </div>
     <!-- main content section ends here -->

@@ -48,6 +48,12 @@
 
         @include('layouts.admin.footer')
     @endif
-    {{-- @else
-    @include('layouts.bottom-header') --}}
+@else
+    @include('layouts.user.header')
+
+    <main class="pt-5">
+        @yield('content')
+    </main>
+
+    @include('layouts.user.footer')
 @endif

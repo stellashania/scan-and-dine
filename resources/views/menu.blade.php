@@ -1,4 +1,4 @@
-@extends('layouts.user.app')
+@extends('layouts.app')
 
 <style>
     .card-flip>div {
@@ -54,7 +54,7 @@
                                     </label>
                                     <input type="number" value="0" min="0" step="1" class="form-control">
                                 </div>
-            
+
                                 {{-- <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4"> --}}
                                 <a href="menu" class="btn btn-success">Order</a>
                             </form>
@@ -76,7 +76,7 @@
                                     </label>
                                     <input type="number" value="0" min="0" step="1" class="form-control">
                                 </div>
-            
+
                                 {{-- <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4"> --}}
                                 <a href="menu" class="btn btn-success">Order</a>
                             </form>
@@ -98,7 +98,7 @@
                                     </label>
                                     <input type="number" value="0" min="0" step="1" class="form-control">
                                 </div>
-            
+
                                 {{-- <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4"> --}}
                                 <a href="menu" class="btn btn-success">Order</a>
                             </form>

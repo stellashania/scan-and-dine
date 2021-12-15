@@ -1,14 +1,14 @@
-@extends('layouts.user.app')
+@extends('layouts.app')
 
 <style>
-    .card-flip > div {
-    backface-visibility: hidden;
-    transition: transform 300ms;
-    transition-timing-function: linear;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
+    .card-flip>div {
+        backface-visibility: hidden;
+        transition: transform 300ms;
+        transition-timing-function: linear;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: flex;
     }
 
     .card-front {
@@ -28,6 +28,7 @@
     .card-flip:hover .card-back {
         transform: rotateY(0deg);
     }
+
 </style>
 
 @section('content')

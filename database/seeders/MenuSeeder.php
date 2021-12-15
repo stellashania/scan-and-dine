@@ -17,20 +17,66 @@ class MenuSeeder extends Seeder
         //
         Menu::create([
             'category_id' => 1,
-            'name' => 'Siomay',
-            'description' => 'This is chinese food',
-            'price' => 50000,
-            'image' => 'dimsum.jpeg',
-            'active' => True
+            'name' => 'Rendang',
+            'description' => 'Rendang adalah masakan Padang',
+            'price' => 13000,
+            'image' => 'rendang.jpg'
+        ]);
+
+        Menu::create([
+            'category_id' => 1,
+            'name' => 'Ayam Bakar',
+            'description' => 'Ayam bakar adalah masakan padang',
+            'price' => 12000,
+            'image' => 'ayam_bakar.jpg'
+        ]);
+
+        Menu::create([
+            'category_id' => 1,
+            'name' => 'Ayam Gulai',
+            'description' => 'Ayam gulai adalah masakan padang',
+            'price' => 12000,
+            'image' => 'ayam_gulai.jpg'
         ]);
 
         Menu::create([
             'category_id' => 2,
-            'name' => 'Burger',
-            'description' => 'This is western food',
-            'price' => 75000,
-            'image' => 'burger.jpeg',
-            'active' => True
+            'name' => 'Teh Manis',
+            'description' => 'Teh manis adalah minuman padang',
+            'price' => 5000,
+            'image' => 'teh.jpg'
+        ]);
+
+        Menu::create([
+            'category_id' => 2,
+            'name' => 'Teh Tawar',
+            'description' => 'Teh tawar adalah minuman padang',
+            'price' => 5000,
+            'image' => 'teh.jpg'
+        ]);
+
+        Menu::create([
+            'category_id' => 2,
+            'name' => 'Es Jeruk',
+            'description' => 'Es Jeruk adalah minuman padang',
+            'price' => 7500,
+            'image' => 'es_jeruk.jpg'
+        ]);
+
+        Menu::create([
+            'category_id' => 3,
+            'name' => 'Es Krim',
+            'description' => 'Ini eskrim',
+            'price' => 12000,
+            'image' => 'es_krim.jpg'
+        ]);
+
+        Menu::create([
+            'category_id' => 3,
+            'name' => 'Cendol',
+            'description' => 'Ini cendol',
+            'price' => 10000,
+            'image' => 'cendol.jpg'
         ]);
     }
 }

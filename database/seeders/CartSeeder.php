@@ -16,10 +16,6 @@ class CartSeeder extends Seeder
     {
         //
         Cart::create([
-            'user_id' => 1
-        ]);
-
-        Cart::create([
             'user_id' => 2
         ]);
     }

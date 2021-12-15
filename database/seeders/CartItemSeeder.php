@@ -22,7 +22,7 @@ class CartItemSeeder extends Seeder
         // ]);
 
         // CartItem::create([
-        //     'cart_id' => 2,
+        //     'cart_id' => 1,
         //     'menu_id' => 1,
         //     'quantity' => 5
         // ]);

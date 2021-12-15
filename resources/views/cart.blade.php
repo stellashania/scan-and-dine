@@ -24,7 +24,7 @@
                 @foreach ($cart as $item)
                     @foreach ($item->menus as $i)
                         <tr>
-                            <td class="col-md-1">{{ $idx++ }}.</td>
+                            <td class="col-md-1">{{ $loop->iteration }}.</td>
                             <td class="col-md-2">{{ $i->name }}</td>
                             <td class="col-md-2">{{ $i->pivot->quantity }}</td>
                             <td class="col-md-2">Rp. {{ $i->price }}</td>

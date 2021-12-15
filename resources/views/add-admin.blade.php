@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
     <!-- main content section starts here -->
@@ -21,7 +21,7 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" id="password" name="password" class="form-control">
                 </div>
-                
+
                 <div class="form-outline mb-4">
                     <label for="phonenum" class="form-label">Phone Number</label>
                     <input type="text" id="phonenum" name="phonenum" class="form-control">
@@ -29,7 +29,7 @@
 
                 <input type="submit" name="submit" value="Add Admin" class="btn btn-success mb-4">
             </form>
-            
+
         </div>
     </div>
     <!-- main content section ends here -->

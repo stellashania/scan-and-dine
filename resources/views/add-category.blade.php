@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
     <!-- main content section starts here -->
@@ -23,20 +23,20 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="active" id="active" value="Yes" checked>
                         <label class="form-check-label" for="active">
-                          Yes
+                            Yes
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="active" id="active" value="Yes" checked>
                         <label class="form-check-label" for="active">
-                          No
+                            No
                         </label>
                     </div>
                 </div>
 
                 <input type="submit" name="submit" value="Add Category" class="btn btn-success mb-4">
             </form>
-            
+
         </div>
     </div>
     <!-- main content section ends here -->

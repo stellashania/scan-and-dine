@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,13 +20,34 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('../public/css/app.css') }}" rel="stylesheet"> --}}
 </head>
 
-@include('layouts.admin.header')
+{{-- @include('layouts.user.header')
 
 <main class="pt-5">
     @yield('content')
 </main>
 
-@include('layouts.admin.footer')
+@include('layouts.user.footer') --}}
+
+@if (isset(Auth::user()->id))
+    @if (Auth::user()->role == 'member')
+        @include('layouts.user.header')
+
+        <main class="pt-5">
+            @yield('content')
+        </main>
+
+        @include('layouts.user.footer')
+    @elseif(Auth::user()->role == 'admin')
+        @include('layouts.admin.header')
+
+        <main class="pt-5">
+            @yield('content')
+        </main>
+
+        @include('layouts.admin.footer')
+    @endif
+    {{-- @else
+    @include('layouts.bottom-header') --}}
+@endif

@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
     <img src="../storage/assets/banner.png" alt="" width="100%" height="400pt">

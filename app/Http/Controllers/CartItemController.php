@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Menu;
+use App\Models\CartDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class CartItemController extends Controller
 {
     public function addItem(Request $request)
     {
         $rules = Validator::make($request->all(), [
-            'qty' => ['required', 'gt:0']
+            'quantity' => ['required', 'gt:0']
         ]);
         $rules->validate();
 
         $cart_id = Auth()->user()->cart->id;
         $cart = Cart::find($cart_id);
         $menu_id = $request->menu_id;
-        $quantity = $request->qty;
+        $quantity = $request->quantity;
         // $menu = Menu::find($menu_id);
 
         $cart_detail = CartDetail::where('cart_id', '=', $cart_id)->where('menu_id', '=', $menu_id)->first();
@@ -62,13 +65,13 @@ class CartItemController extends Controller
     public function updateItem(Request $request)
     {
         $rules = Validator::make($request->all(), [
-            'qty' => ['required', 'gt:0']
+            'quantity' => ['required', 'gt:0']
         ]);
         $rules->validate();
 
         $cart_id = $request->cart_id;
         $cart = Cart::find($cart_id);
-        $cart->menus()->wherePivot('cart_id', '=', $cart_id)->updateExistingPivot($request->menu_id, ['quantity' => $request->qty]);
+        $cart->menus()->wherePivot('cart_id', '=', $cart_id)->updateExistingPivot($request->menu_id, ['quantity' => $request->quantity]);
 
         // redirect to my cart
         // $user_id = Auth()->user()->id;

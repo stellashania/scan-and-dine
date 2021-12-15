@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // CART
-Route::get('/cart', [CartController::class, 'displayAll'])->middleware('role:member')->name('view-cart');
+Route::get('/cart', [CartController::class, 'displayAll'])->middleware('role:member')->name('cart');
 // Route::post('/add-cart-item', [CartItemController::class, 'addItem'])->middleware('role:member');
 Route::post('/delete-cart-item/{cart_id}/{menu_id}', [CartItemController::class, 'deleteItem'])->middleware('role:member');
 Route::get('/edit-cart-item/{cart_id}/{menu_id}', [CartItemController::class, 'getUpdateItemPage'])->middleware('role:member');

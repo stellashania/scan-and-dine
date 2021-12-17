@@ -28,54 +28,27 @@
 </div>    
 
 <form action="" method="">
-    <div class="btn-group-vertical" role="group" aria-label="Vertical button group" style="margin-left: 44rem;">
-        <input
-          type="radio"
-          class="btn-check"
-          name="payment_method"
-          id="option1"
-          autocomplete="off"
-          value=""
-        />
-        <label class="btn btn-outline-primary btn-lg" for="option1">
-          <div class="d-flex justify-content-between">
-            <span>VISA CARD</span>
-          </div>
-        </label>
-    
-        <input
-          type="radio"
-          class="btn-check"
-          name="payment_method"
-          id="option2"
-          autocomplete="off"
-          value=""
-          checked
-        />
-        <label class="btn btn-outline-primary btn-lg" for="option2">
-          <div class="d-flex justify-content-between">
-            <span>CASH </span>
-          </div>
-        </label>
-    
-        <input
-          type="radio"
-          class="btn-check"
-          name="payment_method"
-          id="option3"
-          autocomplete="off"
-          value=""
-          checked
-        />
-        <label class="btn btn-outline-primary btn-lg" for="option3">
-          <div class="d-flex justify-content-between">
-            <span>E-MONEY </span>
-          </div>
-        </label>
+  <div class="container justify-content-center">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment" id="Visa" value="Visa" checked>
+      <label class="form-check-label" for="VISA">
+        VISA MASTERCARD
+      </label>
     </div>
-    <div class="text-center">
-        <button type="button" class="btn btn-success">Pay</button>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment" id="E-Payment" value="E-Payment">
+      <label class="form-check-label" for="E-Payment">
+        E-PAYMENT
+      </label>
     </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment" id="Cash" value="Cash">
+      <label class="form-check-label" for="Cash">
+        CASH
+      </label>
+    </div>
+    <button type="submit" class="btn btn-success">Pay</button>
+  </div>
 </form>
 
 @endsection

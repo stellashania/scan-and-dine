@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             ReservationSeeder::class,
             MenuSeeder::class,
             TransactionDetailSeeder::class,
-            CartItemSeeder::class,
+            // CartItemSeeder::class,
         ]);
     }
 }

@@ -39,21 +39,21 @@ Route::redirect('/', 'home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // MENU
-Route::get('/locked-menu', [MenuController::class, 'viewCategory']);
-Route::get('/locked-menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
-Route::get('/menu/{catId}', [MenuController::class, 'unlockMenu']);
+Route::get('/locked-menu', [MenuController::class, 'viewCategory'])->middleware('role:member');
+Route::get('/locked-menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory'])->middleware('role:member');
+Route::get('/menu/{catId}', [MenuController::class, 'unlockMenu'])->middleware('role:member')->name('menu');
 
 // PAYMENT
-Route::get('/paymentForm', [PaymentController::class, 'payForm']);
-Route::post('/checkout', [TransactionController::class, 'checkout']);
+Route::get('/paymentForm', [PaymentController::class, 'payForm'])->middleware('role:member');
+Route::post('/checkout', [TransactionController::class, 'checkout'])->middleware('role:member');
 
 // HISTORY TRANSACTION
-Route::get('/history-transaction', [TransactionController::class, 'displayAll'])->name('history-transaction');
+Route::get('/history-transaction', [TransactionController::class, 'displayAll'])->middleware('role:member')->name('history-transaction');
 
 // RESERVATION
-Route::get('/reservation', [ReservationController::class, 'index']);
-Route::get('/select-table', [ReservationController::class, 'selectTable']);
-Route::post('/add-reservation', [ReservationController::class, 'addReservation']);
+Route::get('/reservation', [ReservationController::class, 'index'])->middleware('role:member');
+Route::get('/select-table', [ReservationController::class, 'selectTable'])->middleware('role:member');
+Route::post('/add-reservation', [ReservationController::class, 'addReservation'])->middleware('role:member');
 
 // Route::get('/cart', function () {
 //     return view('cart');

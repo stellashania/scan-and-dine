@@ -128,9 +128,9 @@ Route::get('/locked-menu', function () {
     return view('locked-menu');
 });
 
-Route::get('/menu', function () {
-    return view('menu');
-});
+// Route::get('/menu', function () {
+//     return view('menu');
+// });
 
 // Route::get('/cart', function () {
 //     return view('cart');

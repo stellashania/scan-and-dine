@@ -48,6 +48,15 @@ Route::post('/checkout', [TransactionController::class, 'checkout']);
 // HISTORY TRANSACTION
 Route::get('/history-transaction', [TransactionController::class, 'displayAll'])->name('history-transaction');
 
+// RESERVATION
+Route::get('/reservation', [ReservationController::class, 'index']);
+Route::get('/select-table', [ReservationController::class, 'selectTable']);
+Route::post('/add-reservation', [ReservationController::class, 'addReservation']);
+
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
+
 // Route::get('/manage-admin', function () {
 //     return view('manage-admin');
 // });
@@ -119,14 +128,6 @@ Route::get('/history-transaction', [TransactionController::class, 'displayAll'])
 //     return view('menu');
 // });
 
-// Route::get('/cart', function () {
-//     return view('cart');
-// });
-Route::get('/reservation', [ReservationController::class, 'index']);
-Route::get('/select-table', [ReservationController::class, 'selectTable']);
-Route::post('/add-reservation', [ReservationController::class, 'addReservation']);
-
-Route::get('/paymentForm', [paymentController::class, 'payForm']);
 // Route::get('/cart', function () {
 //     return view('cart');
 // });

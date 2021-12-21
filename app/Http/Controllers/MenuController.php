@@ -55,9 +55,13 @@ class MenuController extends Controller
         )->get();
         if ($code->first()) {
             $data = [
-                'error' => "Invalid Code!",
                 'menus' => $menus,
             ];
+
+            $reservation = Reservation::where('code', $request->code)->first();
+
+            session(['reservation_id' => $reservation->id]);
+
             return view('menu', $data);
         } else {
             $data = [

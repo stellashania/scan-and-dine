@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Reservation;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -39,6 +40,13 @@ class TransactionController extends Controller
 
         //delete cart detail (detach)
         $cart->menus()->detach();
+
+        if ($request->session()->has('reservation_id')) {
+            $reservation_id = $request->session()->get('reservation_id');
+            $reservation = Reservation::where('id', $reservation_id)->first();
+            $reservation->delete();
+            $request->session()->forget('reservation_id');
+        }
 
         // redirect to transaction history
         return redirect()->route('history-transaction');

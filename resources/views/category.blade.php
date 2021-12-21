@@ -43,7 +43,7 @@
                 @foreach ($categories as $category)
                     {{-- <a href="/menu/{{$category->id}}"> --}}
                     <div class="col-sm-4">
-                        <a href="/menu/{{ $category->id }}" class="text-decoration-none">
+                        <a href="/locked-menu/{{ $category->id }}" class="text-decoration-none">
                             <div class="card card-flip h-100 border-0">
                                 <div class="card-front text-white" style="background-color: rgba(187, 159, 106, 0.5)">
                                     <div class="card-body">

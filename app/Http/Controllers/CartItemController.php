@@ -25,9 +25,9 @@ class CartItemController extends Controller
         $quantity = $request->quantity;
         // $menu = Menu::find($menu_id);
 
-        $cart_detail = CartDetail::where('cart_id', '=', $cart_id)->where('menu_id', '=', $menu_id)->first();
+        $cart_item = CartItem::where('cart_id', '=', $cart_id)->where('menu_id', '=', $menu_id)->first();
 
-        if (!empty($cart_detail)) {
+        if (!empty($cart_item)) {
             // update
             $cart->menus()->wherePivot('cart_id', '=', $cart_id)->updateExistingPivot($menu_id, ['quantity' => $quantity]);
         } else {

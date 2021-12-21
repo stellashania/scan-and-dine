@@ -41,7 +41,7 @@
                             <a href="{{ url('reservation') }}" class="navbar-text mr-3">Reservation</a>
                             <a href="/locked-menu" class="navbar-text mr-3">Menu</a>
                             <a href="{{ url('cart') }}" class="navbar-text mr-3">Cart</a>
-                            <a href="/cart" class="navbar-text mr-3">My Transactions</a>
+                            <a href="{{ url('history-transaction') }}" class="navbar-text mr-3">My Transactions</a>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -50,8 +50,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                         document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

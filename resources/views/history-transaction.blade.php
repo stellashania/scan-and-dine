@@ -22,7 +22,7 @@
                                 <tr>
                                     <td class="col-sm-9">{{ $item->name }}</td>
                                     <td class="col-sm-1">x {{ $item->pivot->quantity }}</td>
-                                    <td class="col-sm-2">IDR. {{ $item->price }}</td>
+                                    <td class="col-sm-2">IDR. {{ number_format($item->price) }}</td>
                                 </tr>
                                 @php
                                     $ttlPrice += $item->price * $item->pivot->quantity;
@@ -33,7 +33,7 @@
                                     style="padding-right: 5.6rem; color: rgba(128, 110, 75, 0.8); font-size:larger; font-weight:bold">
                                     Total :
                                     IDR.
-                                    {{ $ttlPrice }}</td>
+                                    {{ number_format($ttlPrice) }}</td>
                             </tr>
                         </tbody>
                     </table>

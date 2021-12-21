@@ -49,16 +49,24 @@
                                 <p class="card-text my-0">{{ $menu->description }}</p>
                                 <p class=" card-text my-0">IDR{{ number_format($menu->price) }}</p>
 
-                                <form action="" method="POST">
+                                <form action="/add-cart-item" method="POST">
+                                    @csrf
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="code">
                                             Quantity
                                         </label>
-                                        <input type="number" value="0" min="0" step="1" class="form-control">
+                                        <input type="number" name="quantity" value="0" min="0" step="1"
+                                            class="form-control @error('quantity') is-invalid @enderror">
+                                        @error('quantity')
+                                            <div class="alert">{{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
 
                                     {{-- <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4"> --}}
-                                    <a href="menu" class="btn btn-success">Order</a>
+                                    {{-- <a href="menu" class="btn btn-success">Order</a> --}}
+                                    <input type="hidden" name="menu_id" value="{{ $menu->id }}">
+                                    <input type="submit" name="submit" value="Order" class="btn btn-success">
                                 </form>
                             </div>
                         </div>
@@ -66,50 +74,6 @@
                 @empty
                     <h1 class="my-3">No Item</h1>
                 @endforelse
-
-                {{-- <div class="col-sm-4">
-                    <div class="card border-0" style="background-color: rgba(187, 159, 106, 0.3)">
-                        <div class="card-body pb-0">
-                            <img src="../storage/assets/ketoprak.jpg" alt="" width="100%" height="230px">
-                            <h3 class="card-title mt-3">Ketoprak</h3>
-                            <p class="card-text">Very delicious</p>
-
-                            <form action="" method="POST">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" for="code">
-                                        Quantity
-                                    </label>
-                                    <input type="number" value="0" min="0" step="1" class="form-control">
-                                </div>
-
-                                <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4">
-                                <a href="menu" class="btn btn-success">Order</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="card border-0" style="background-color: rgba(187, 159, 106, 0.3)">
-                        <div class="card-body pb-0">
-                            <img src="../storage/assets/ketoprak.jpg" alt="" width="100%" height="230px">
-                            <h3 class="card-title mt-3">Ketoprak</h3>
-                            <p class="card-text">Very delicious</p>
-
-                            <form action="" method="POST">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" for="code">
-                                        Quantity
-                                    </label>
-                                    <input type="number" value="0" min="0" step="1" class="form-control">
-                                </div>
-
-                                <input type="submit" name="submit" value="Unlock" class="btn btn-success mb-4">
-                                <a href="menu" class="btn btn-success">Order</a>
-                            </form>
-                        </div>
-                    </div>
-                </div> --}}
 
             </div>
         </div>

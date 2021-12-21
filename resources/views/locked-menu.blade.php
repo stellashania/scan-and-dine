@@ -43,7 +43,7 @@
         </div>
 
         <div class="container-fluid justify-content-center mb-5 border w-50">
-            <form action="/menu/{{ $catId }}" method="POST">
+            <form action="/menu/{{ $catId }}" method="GET">
                 @csrf
                 <div class="form-outline mb-4">
                     <label class="form-label mt-3" for="code">
@@ -57,7 +57,7 @@
                 {{-- <a href="menu" type="submit" name="submit" class="btn btn-success mb-4">Unlock</a> --}}
                 <br>
                 @isset($error)
-                    <label class="form-label mt-3" for="code">
+                    <label class="form-label mt-3 text-danger" for="code">
                         {{ $error }}
                     </label>
                 @endisset

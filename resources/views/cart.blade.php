@@ -31,9 +31,9 @@
                             <td class="col-md-1">{{ $loop->iteration }}.</td>
                             <td class="col-md-2">{{ $i->name }}</td>
                             <td class="col-md-2">{{ $i->pivot->quantity }}</td>
-                            <td class="col-md-2">Rp. {{ $i->price }}</td>
+                            <td class="col-md-2">Rp. {{ number_format($i->price) }}</td>
                             <td class="col-md-2">
-                                Rp. {{ $i->pivot->quantity * $i->price }}
+                                Rp. {{ number_format($i->pivot->quantity * $i->price) }}
                                 @php
                                     $ttlPrice += $i->price * $i->pivot->quantity;
                                 @endphp
@@ -66,7 +66,7 @@
                 @endforelse
             </table>
 
-            <h3 class="my-4">Total: Rp. {{ $ttlPrice }}</h3>
+            <h3 class="my-4">Total: Rp. {{ number_format($ttlPrice) }}</h3>
 
             <form action="paymentForm" method="GET">
                 @if ($isEmpty != 0)

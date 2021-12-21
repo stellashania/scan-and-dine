@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->date('date');
             $table->string('payment_method');
-            $table->boolean('status');
+            // $table->boolean('status');
             $table->timestamps();
         });
     }

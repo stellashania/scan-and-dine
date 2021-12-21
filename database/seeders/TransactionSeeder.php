@@ -18,7 +18,7 @@ class TransactionSeeder extends Seeder
             'user_id' => 1,
             'date' => '2000-02-11',
             'payment_method' => 'OVO',
-            'status' => True
+            // 'status' => True
         ]);
     }
 }

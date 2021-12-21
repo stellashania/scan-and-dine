@@ -5,6 +5,7 @@ use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\paymentController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,10 @@ Route::get('/menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
 
 // PAYMENT
 Route::get('/paymentForm', [PaymentController::class, 'payForm']);
+Route::post('/checkout', [TransactionController::class, 'checkout']);
+
+// HISTORY TRANSACTION
+Route::get('/history-transaction', [TransactionController::class, 'displayAll'])->name('history-transaction');
 
 Route::get('/manage-admin', function () {
     return view('manage-admin');

@@ -6,6 +6,7 @@ use App\Http\Controllers\paymentController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TransactionController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,7 @@ Route::post('/edit-cart-item/{cart_id}/{menu_id}', [CartItemController::class, '
 Auth::routes();
 
 // HOME
+Route::redirect('/', 'home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // MENU

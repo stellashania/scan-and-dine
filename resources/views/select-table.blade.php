@@ -31,7 +31,7 @@
                 <input type="hidden" name="date" value="{{$details->date}}">
                 <input type="hidden" name="time" value="{{$details->time}}">
 
-                @if ($tables->isEmpty())
+                {{-- @isset ($tables)
                     <div class="mb-0">
                         <div class="mt-4">
                             <button type="submit" name="btn" value="back" class="text-white btn btn-danger mb-4">
@@ -39,7 +39,7 @@
                             </button>
                         </div>
                     </div>
-                @else
+                @else --}}
                     <div class="mb-0">
                         <div class="mt-4">
                             <button type="submit" name="btn" value="book" class="btn btn-success mb-4">
@@ -47,7 +47,7 @@
                             </button>
                         </div>
                     </div>
-                @endif
+                {{-- @endif --}}
                 
 
             </form>

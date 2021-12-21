@@ -33,7 +33,11 @@
 
                 <div class="form-outline mb-4">
                     <label for="time" class="form-label text-md-right">Time</label>
-                    <input type="time" id="time" name="time" class="form-control @error('time') is-invalid @enderror" value="{{old('time')}}">
+                    <select id="time" name="time" class="form-control @error('time') is-invalid @enderror" value="{{old('time')}}">
+                        @foreach ($booktimes as $time)
+                            <option value="{{ $time->id }}">{{ $time->window }}</option>
+                        @endforeach
+                    </select>
 
                     @error('time')
                         <span class="invalid-feedback" role="alert">

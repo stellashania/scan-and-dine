@@ -20,7 +20,7 @@ class ReservationSeeder extends Seeder
             'table_id' => 1,
             'pax' => 3,
             'date' => '2000-01-01',
-            'time' => '03:42:21',
+            'booking_time_id' => 1,
             'code' => '00001'
         ]);
     }

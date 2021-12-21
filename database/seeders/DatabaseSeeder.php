@@ -21,12 +21,13 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TableSeeder::class,
             CartSeeder::class,
-            TransactionSeeder:: class,
-            CategorySeeder:: class,
-            ReservationSeeder:: class,
-            MenuSeeder:: class,
+            TransactionSeeder::class,
+            CategorySeeder::class,
+            BookingTimeSeeder::class,
+            ReservationSeeder::class,
+            MenuSeeder::class,
             TransactionDetailSeeder::class,
-            CartItemSeeder::class
+            CartItemSeeder::class,
         ]);
     }
 }

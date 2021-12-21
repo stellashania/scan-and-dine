@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\BookingTime;
 use App\Models\Reservation;
 use App\Models\Table;
 use Illuminate\Http\Request;
@@ -13,7 +14,12 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        return view('reservation');
+        $bookingtimes = BookingTime::all();
+
+        $data = [
+            'booktimes' => $bookingtimes,
+        ];
+        return view('reservation', $data);
     }
 
     public function selectTable(Request $request)
@@ -21,19 +27,63 @@ class ReservationController extends Controller
         $rules = Validator::make($request->all(), [
             'people' => ['required', 'numeric', 'min:1'],
             'date' => ['required', 'date'],
-            'time' => ['required', 'date_format:H:i']
+            'time' => ['required']
         ]);
 
         $rules->validate();
 
         $tables = Table::where([
-            ['availability', '=', True],
             ['capacity', '>=', $request->people]
         ])->get();
 
+        $reservation_limit = 5;
+
+        $a_tables = [];
+
+        foreach ($tables as $table) {
+            $reservations = Reservation::where([
+                ['table_id', '=', $table->id],
+                ['date', '=', $request->date]
+            ])->get();
+
+            if (count($reservations) < $reservation_limit) {
+                array_push($a_tables, $table);
+            }
+        }
+
+        foreach ($a_tables as $table) {
+            $reservation = Reservation::where([
+                ['table_id', '=', $table->id],
+                ['date', '=', $request->date],
+                ['booking_time_id', '=', $request->time]
+            ])->get();
+
+            // echo $reservation;
+            // echo "<br>";
+            // echo $table->id, $request->date, $request->time;
+            // echo "<br>";
+
+            if (!$reservation->isEmpty()) {
+                // echo $table->id;
+                // echo "<br>";
+                $key = array_search($table, $a_tables, TRUE);
+                // echo $key;
+                // echo "<br>";
+                unset($a_tables[$key]);
+            }
+        }
+
+        // dd($a_tables);
+
+        if (empty($a_tables)) {
+            echo "No tables available, please try again";
+            return redirect('/reservation');
+        }
+
+
         $data = [
             'details' => $request,
-            'tables' => $tables
+            'tables' => $a_tables
         ];
 
         return view('select-table', $data);
@@ -41,28 +91,38 @@ class ReservationController extends Controller
 
     public function addReservation(Request $request)
     {
-        if ($request->btn == "book") {
-            $res = new Reservation;
 
-            $res->user_id = Auth::user()->id;
-            $res->table_id = $request->table;
-            $res->pax = $request->people;
-            $res->date = $request->date;
-            $res->time = $request->time;
-            $res->code = str_pad(rand(pow(10, 5 - 1), pow(10, 5) - 1), 5, '0', STR_PAD_LEFT);
+        $res = new Reservation;
 
-            $res->save();
+        $res->user_id = Auth::user()->id;
+        $res->table_id = $request->table;
+        $res->pax = $request->people;
+        $res->date = $request->date;
+        $res->booking_time_id = $request->time;
 
-            $table = Table::find($request->table);
+        $code = str_pad(rand(pow(10, 5 - 1), pow(10, 5) - 1), 5, '0', STR_PAD_LEFT);
+        $res->code = $code;
 
-            $table->availability = False;
+        $res->save();
 
-            $table->update();
+        // $result = Reservation::where([
+        //     ['user_id', '=', Auth::user()->id],
+        //     ['table_id', '=', $request->table],
+        //     ['pax', '=', $request->people],
+        //     ['date', '=', $request->date],
+        //     ['booking_time_id', '=', $request->time]
+        // ])->first();
 
-            return redirect('/home');
-        } else {
+        // BookingTime::where
 
-            return redirect('reservation');
-        }
+        $data = [
+            // 'table' => $request->table,
+            // 'pax' => $request->people,
+            // 'date' => $request->date,
+            // 'time' => $request->time
+            'res' => $res
+        ];
+
+        return view('reservation-accepted', $data);
     }
 }

@@ -15,26 +15,19 @@ class TableSeeder extends Seeder
     public function run()
     {
         Table::create([
-            'capacity' => 3,
-            'availability' => True
+            'capacity' => 3
         ]);
         Table::create([
-            'capacity' => 2,
-            'availability' => True
+            'capacity' => 2
         ]);
         Table::create([
-            'capacity' => 4,
-            'availability' => True
+            'capacity' => 4
         ]);
         Table::create([
-            'capacity' => 1,
-            'availability' => True
+            'capacity' => 2
         ]);
         Table::create([
-            'capacity' => 3,
-            'availability' => True
+            'capacity' => 3
         ]);
-
-        
     }
 }

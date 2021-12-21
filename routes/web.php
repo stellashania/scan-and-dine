@@ -40,7 +40,7 @@ Route::get('/menu', [MenuController::class, 'viewCategory']);
 Route::get('/menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
 
 // PAYMENT
-Route::get('/paymentForm', [paymentController::class, 'payForm']);
+Route::get('/paymentForm', [PaymentController::class, 'payForm']);
 
 Route::get('/manage-admin', function () {
     return view('manage-admin');

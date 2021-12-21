@@ -28,7 +28,7 @@
 </div>    
 
 <form action="" method="">
-  <div class="container justify-content-center">
+  <div class="container" style="margin: 0; padding-top: 2rem;">
     <div class="form-check">
       <input class="form-check-input" type="radio" name="payment" id="Visa" value="Visa" checked>
       <label class="form-check-label" for="VISA">
@@ -47,7 +47,7 @@
         CASH
       </label>
     </div>
-    <button type="submit" class="btn btn-success">Pay</button>
+    <button type="submit" class="btn btn-success mt-4">Pay</button>
   </div>
 </form>
 

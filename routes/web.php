@@ -37,8 +37,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // MENU
-Route::get('/menu', [MenuController::class, 'viewCategory']);
-Route::get('/menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
+Route::get('/locked-menu', [MenuController::class, 'viewCategory']);
+Route::get('/locked-menu/{catId}', [MenuController::class, 'viewMenuBasedOnCategory']);
+Route::post('/menu/{catId}', [MenuController::class, 'unlockMenu']);
 
 // PAYMENT
 Route::get('/paymentForm', [PaymentController::class, 'payForm']);
@@ -124,22 +125,6 @@ Route::get('/reservation', function () {
 Route::get('/reservation', [ReservationController::class, 'index']);
 Route::get('/select-table', [ReservationController::class, 'selectTable']);
 Route::post('/add-reservation', [ReservationController::class, 'addReservation']);
-
-Route::get('/category', function () {
-    return view('category');
-});
-
-Route::get('/locked-menu', function () {
-    return view('locked-menu');
-});
-
-// Route::get('/menu', function () {
-//     return view('menu');
-// });
-
-// Route::get('/cart', function () {
-//     return view('cart');
-// });
 
 Route::get('/paymentForm', [paymentController::class, 'payForm']);
 // Route::get('/cart', function () {

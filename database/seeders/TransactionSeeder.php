@@ -14,11 +14,11 @@ class TransactionSeeder extends Seeder
      */
     public function run()
     {
-        Transaction::create([
-            'user_id' => 1,
-            'date' => '2000-02-11',
-            'payment_method' => 'OVO',
-            // 'status' => True
-        ]);
+        // Transaction::create([
+        //     'user_id' => 2,
+        //     'date' => '2000-02-11',
+        //     'payment_method' => 'OVO',
+        //     // 'status' => True
+        // ]);
     }
 }

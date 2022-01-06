@@ -89,9 +89,9 @@ Route::get('/editMenu/{id}', [MenuAdminController::class, 'editMenuForm']);
 Route::post('/updateMenu/{id}', [MenuAdminController::class, 'updateMenu']);
 Route::get('/deleteMenu/{id}', [MenuAdminController::class, 'deleteMenu']);
 
-// Route::get('/manage-order', function () {
-//     return view('manage-order');
-// });
+Route::get('/manage-order', [TransactionController::class, 'displayOrder']);
+
+Route::get('/manage-reservation', [ReservationController::class, 'displayAll']);
 
 
 

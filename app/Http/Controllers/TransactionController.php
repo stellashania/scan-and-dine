@@ -59,4 +59,10 @@ class TransactionController extends Controller
 
         return view('history-transaction', compact('transactions'));
     }
+
+    public function displayOrder(){
+        $transactions = Transaction::all();
+
+        return view('view-order-admin', compact('transactions'));
+    }
 }

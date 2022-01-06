@@ -125,4 +125,10 @@ class ReservationController extends Controller
 
         return view('reservation-accepted', $data);
     }
+
+    public function displayAll(){
+        $reservations = Reservation::all();
+
+        return view('view-reservation-admin', compact('reservations'));
+    }
 }

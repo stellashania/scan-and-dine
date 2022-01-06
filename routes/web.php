@@ -74,24 +74,24 @@ Route::post('/add-reservation', [ReservationController::class, 'addReservation']
 // });
 
 // MANAGE-CATEGORY
-Route::get('/manage-category', [CategoryController::class, 'viewCategories']);
-Route::get('/add-category-form', [CategoryController::class, 'addForm']);
-Route::post('/add-category', [CategoryController::class, 'addCategory']);
-Route::get('/editCategory/{id}', [CategoryController::class, 'editCategory']);
-Route::post('/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
-Route::get('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory']);
+Route::get('/manage-category', [CategoryController::class, 'viewCategories'])->middleware('role:admin');
+Route::get('/add-category-form', [CategoryController::class, 'addForm'])->middleware('role:admin');
+Route::post('/add-category', [CategoryController::class, 'addCategory'])->middleware('role:admin');
+Route::get('/editCategory/{id}', [CategoryController::class, 'editCategory'])->middleware('role:admin');
+Route::post('/updateCategory/{id}', [CategoryController::class, 'updateCategory'])->middleware('role:admin');
+Route::get('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory'])->middleware('role:admin');
 
 //MANAGE MENU
-Route::get('/manage-menu', [MenuAdminController::class, 'viewMenus']);
-Route::get('/add-menu-form', [MenuAdminController::class, 'addMenuForm']);
-Route::post('/add-menu', [MenuAdminController::class, 'addMenu']);
-Route::get('/editMenu/{id}', [MenuAdminController::class, 'editMenuForm']);
-Route::post('/updateMenu/{id}', [MenuAdminController::class, 'updateMenu']);
-Route::get('/deleteMenu/{id}', [MenuAdminController::class, 'deleteMenu']);
+Route::get('/manage-menu', [MenuAdminController::class, 'viewMenus'])->middleware('role:admin');
+Route::get('/add-menu-form', [MenuAdminController::class, 'addMenuForm'])->middleware('role:admin');
+Route::post('/add-menu', [MenuAdminController::class, 'addMenu'])->middleware('role:admin');
+Route::get('/editMenu/{id}', [MenuAdminController::class, 'editMenuForm'])->middleware('role:admin');
+Route::post('/updateMenu/{id}', [MenuAdminController::class, 'updateMenu'])->middleware('role:admin');
+Route::get('/deleteMenu/{id}', [MenuAdminController::class, 'deleteMenu'])->middleware('role:admin');
 
-Route::get('/manage-order', [TransactionController::class, 'displayOrder']);
+Route::get('/manage-order', [TransactionController::class, 'displayOrder'])->middleware('role:admin');
 
-Route::get('/manage-reservation', [ReservationController::class, 'displayAll']);
+Route::get('/manage-reservation', [ReservationController::class, 'displayAll'])->middleware('role:admin');
 
 
 

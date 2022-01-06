@@ -83,8 +83,10 @@ class CategoryController extends Controller
     }
 
     public function deleteCategory(Request $request){
+        $category = Category::where('id', $request->id)->first();
+        Storage::delete("public/assets/categories/" . $category->image);
         Category::where('id', $request->id)->delete();
-
+        
         return redirect('manage-category');
     }
 }

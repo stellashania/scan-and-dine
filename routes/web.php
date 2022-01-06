@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MenuAdminController;
 use App\Http\Controllers\paymentController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
@@ -72,6 +73,7 @@ Route::post('/add-reservation', [ReservationController::class, 'addReservation']
 //     return view('manage-reservation');
 // });
 
+// MANAGE-CATEGORY
 Route::get('/manage-category', [CategoryController::class, 'viewCategories']);
 Route::get('/add-category-form', [CategoryController::class, 'addForm']);
 Route::post('/add-category', [CategoryController::class, 'addCategory']);
@@ -79,13 +81,13 @@ Route::get('/editCategory/{id}', [CategoryController::class, 'editCategory']);
 Route::post('/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
 Route::get('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory']);
 
-// Route::get('/manage-menu', function () {
-//     return view('manage-menu');
-// });
-
-// Route::get('/add-menu', function () {
-//     return view('add-menu');
-// });
+//MANAGE MENU
+Route::get('/manage-menu', [MenuAdminController::class, 'viewMenus']);
+Route::get('/add-menu-form', [MenuAdminController::class, 'addMenuForm']);
+Route::post('/add-menu', [MenuAdminController::class, 'addMenu']);
+Route::get('/editMenu/{id}', [MenuAdminController::class, 'editMenuForm']);
+Route::post('/updateMenu/{id}', [MenuAdminController::class, 'updateMenu']);
+Route::get('/deleteMenu/{id}', [MenuAdminController::class, 'deleteMenu']);
 
 // Route::get('/manage-order', function () {
 //     return view('manage-order');

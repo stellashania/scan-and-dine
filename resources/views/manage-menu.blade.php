@@ -7,45 +7,38 @@
             <h1 class="my-4">Manage Menu</h1>
 
             <!-- button to add admin -->
-            <a href="add-menu" class="btn btn-primary mb-4">Add Menu</a>
+            <a href="add-menu-form" class="btn btn-primary mb-4">Add Menu</a>
 
             <table class="table table-striped table-hover">
                 <thead>
-                    <th class="col-md-1">No.</th>
-                    <th class="col-md-2">Name</th>
-                    <th class="col-md-2">Price</th>
-                    <th class="col-md-2">Image</th>
-                    <th class="col-md-1">Active</th>
-                    <th class="col-md-4">Actions</th>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+
                 </thead>
-
-                <tr>
-                    <td class="col-md-1">1.</td>
-                    <td class="col-md-2">Nasi Uduk</td>
-                    <td class="col-md-2">Rp 50.000</td>
-                    <td class="col-md-2">
-                        <img src="../storage/assets/ketoprak.jpg" width="100%" alt="">
-                    </td>
-                    <td class="col-md-1">Yes</td>
-                    <td class="col-md-5">
-                        <a href="#" class="btn btn-success shadow-sm">Update Menu</a>
-                        <a href="#" class="btn btn-danger shadow-sm">Delete Menu</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-1">1.</td>
-                    <td class="col-md-2">Nasi Uduk</td>
-                    <td class="col-md-1">Rp 50.000</td>
-                    <td class="col-md-2">
-                        <img src="../storage/assets/ketoprak.jpg" width="100%" alt="">
-                    </td>
-                    <td class="col-md-1">Yes</td>
-                    <td class="col-md-4">
-                        <a href="#" class="btn btn-success shadow-sm">Update Menu</a>
-                        <a href="#" class="btn btn-danger shadow-sm">Delete Menu</a>
-                    </td>
-                </tr>
+                <tbody>
+                    @foreach ($menus as $menu)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $menu->name }}</td>
+                            <td class="col-md-3">{{ $menu->description }}</td>
+                            <td>{{ $menu->price }}</td>
+                            <td>
+                                <img src="../storage/assets/menus/{{ $menu->image }}" style="height: 10rem; width: 15rem;"
+                                    alt="">
+                            </td>
+                            <td>
+                                <a href="/editMenu/{{ $menu->id }}" class="btn btn-success shadow-sm">Update Menu</a>
+                                <a href="/deleteMenu/{{ $menu->id }}" class="btn btn-danger shadow-sm">Delete Menu</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

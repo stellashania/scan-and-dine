@@ -6,17 +6,44 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Welcome Admin!') }}</div>
 
-                    <div class="card-body">
-                        @if (session('status'))
+                    @if (Auth::user()->role == 'admin')
+                        <div class="card-header">
+                            {{ __('Welcome Admin!') }}
+                        </div>
+
+                        <div class="card-body">
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
+                            {{ __('You are logged in!') }}
+                        </div>
+                    @else
+                        <div class="card-header">
+                            {{-- {{ __('Welcome Admin!') }} --}}
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
+                            {{ __('You are logged in!') }}
+                        </div>
+
+                        <div class="card-body">
+                            {{-- @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
-                    </div>
+                        {{ __('You are logged in!') }} --}}
+                            Welcome to Siang Malam Restaurant
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

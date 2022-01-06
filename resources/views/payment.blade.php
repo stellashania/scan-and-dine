@@ -9,7 +9,7 @@
         @foreach ($cart as $item)
             @foreach ($item->menus as $i)
                 <div class="d-flex justify-content-between mt-2">
-                    <span>{{ $i->name }}</span> <span>Rp. {{ $i->price }}</span>
+                    <span>{{ $i->name }}  ({{$i->pivot->quantity}}x)</span> <span>Rp. {{ $i->price }}</span>
                     @php
                         $ttlPrice += $i->price * $i->pivot->quantity;
                     @endphp

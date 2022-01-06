@@ -16,10 +16,10 @@ class CartController extends Controller
         $cart_id = $user->cart->id;
         $chosen_cart = Cart::find($cart_id);
 
-        $cart = $chosen_cart::with('menus')->get();
+        // $cart = $chosen_cart::with('menus')->get();
 
         // dd(cart);
 
-        return view('cart', compact('cart'));
+        return view('cart', compact('chosen_cart'));
     }
 }

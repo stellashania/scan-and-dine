@@ -36,7 +36,7 @@
                             @endif
                         @else
                             <a href="home" class="navbar-text mr-2">Home</a>
-                            <a href="manage-admin" class="navbar-text mr-2">Admin</a>
+                            {{-- <a href="manage-admin" class="navbar-text mr-2">Admin</a> --}}
                             <a href="manage-reservation" class="navbar-text mr-2">Reservation</a>
                             <a href="manage-category" class="navbar-text mr-2">Category</a>
                             <a href="manage-menu" class="navbar-text mr-2">Menu</a>

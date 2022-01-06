@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\paymentController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
@@ -71,13 +72,12 @@ Route::post('/add-reservation', [ReservationController::class, 'addReservation']
 //     return view('manage-reservation');
 // });
 
-// Route::get('/manage-category', function () {
-//     return view('manage-category');
-// });
-
-// Route::get('/add-category', function () {
-//     return view('add-category');
-// });
+Route::get('/manage-category', [CategoryController::class, 'viewCategories']);
+Route::get('/add-category-form', [CategoryController::class, 'addForm']);
+Route::post('/add-category', [CategoryController::class, 'addCategory']);
+Route::get('/editCategory/{id}', [CategoryController::class, 'editCategory']);
+Route::post('/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
+Route::get('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory']);
 
 // Route::get('/manage-menu', function () {
 //     return view('manage-menu');

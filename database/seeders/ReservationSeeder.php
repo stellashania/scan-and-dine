@@ -15,13 +15,13 @@ class ReservationSeeder extends Seeder
     public function run()
     {
         //
-        Reservation::create([
-            'user_id' => 1,
-            'table_id' => 1,
-            'pax' => 3,
-            'date' => '2000-01-01',
-            'booking_time_id' => 1,
-            'code' => '00001'
-        ]);
+        // Reservation::create([
+        //     'user_id' => 1,
+        //     'table_id' => 1,
+        //     'pax' => 3,
+        //     'date' => '2000-01-01',
+        //     'booking_time_id' => 1,
+        //     'code' => '00001'
+        // ]);
     }
 }

@@ -45,7 +45,7 @@ class LoginController extends Controller
     protected function sendLoginResponse(Request $request)
     {
         if($request->remember == true){
-            $minute= 300;
+            $minute= 90;
             $token = Auth::getRecallername();
             Cookie::queue($token, Cookie::get($token), $minute);
         }

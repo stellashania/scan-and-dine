@@ -1,65 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## About Scan and Dine
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The Scan and Dine web app project is a university group project for the Web Programming course. Scan and Dine is a web app for restaurants that include both the admin and customer app. The app aims to reduce waiting time, minimize physical interaction during the pandemic, and allows customers to have a pleasant dining experience. Customers can reserve a table, view the restaurant's menu, place an order, and pay their bill through the web app, while admins can manage the reservations menu, and orders from the customers.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tools
+- Laravel
+- HTML5
+- CSS
+- PHP
+- Bootstrap
+- XAMPP (with MySQL database)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Screenshots
 
-## Learning Laravel
+- Customer app
+![1](https://user-images.githubusercontent.com/79920236/170654621-ea8af6ca-af60-4df3-b2f8-461ed47a8b73.png)
+![2](https://user-images.githubusercontent.com/79920236/170654632-e24f404f-7c7e-4012-b328-cecddcc4e8b2.png)
+![3](https://user-images.githubusercontent.com/79920236/170654635-67224379-e38a-4616-b1f1-55b4b6a5c575.png)
+![4](https://user-images.githubusercontent.com/79920236/170654641-26257eb0-e931-4988-a362-2a594abbd0d6.png)
+![5](https://user-images.githubusercontent.com/79920236/170654645-b4f0d6a4-cbaa-493c-872d-7ca3d3b15561.png)
+![6](https://user-images.githubusercontent.com/79920236/170654649-bad16531-2da4-4257-8d9f-c26c62e49152.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Admin app
+![7](https://user-images.githubusercontent.com/79920236/170654654-27b0bb24-75f4-4a5e-9b4e-9afba99b6b15.png)
+![8](https://user-images.githubusercontent.com/79920236/170654655-279da6fc-7acc-4d5f-8d66-3f798a2c2420.png)
+![9](https://user-images.githubusercontent.com/79920236/170654613-3644754a-7b44-4403-9a39-cffc8f931934.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### How to Run the App
+- Required apps to install: XAMPP, Composer, Node.js
+- Pull the project
+- Start Apache and MySQL in XAMPP
+- Create an .env file and edit the values (DB Host, DB Port, etc.) based on your setup
+- Create a MySQL database with the same name as the DB_DATABASE value in the .env file of the project, which is "scananddine".
+- Run composer update to update dependencies
+- Run php artisan migrate --seed to create the tables and seed the data into the database
+- Run php artisan storage:link to link the storage
+- Run php artisan serve to run the app

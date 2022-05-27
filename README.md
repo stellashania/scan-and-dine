@@ -3,6 +3,11 @@
 The Scan and Dine web app project is a university group project for the Web Programming course. Scan and Dine is a web app for restaurants that include both the admin and customer app. The app aims to reduce waiting time, minimize physical interaction during the pandemic, and allows customers to have a pleasant dining experience. Customers can reserve a table, view the restaurant's menu, place an order, and pay their bill through the web app, while admins can manage the reservations menu, and orders from the customers.
 
 
+## Features
+- Admin: Home, Manage Reservation, Manage Category, Manage Menu.
+- User: Home, Reservation, Menu, Cart, and Transaction History.
+
+
 ## Tools
 - Laravel
 - HTML5

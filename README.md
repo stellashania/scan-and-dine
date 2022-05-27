@@ -12,6 +12,7 @@ The Scan and Dine web app project is a university group project for the Web Prog
 - Laravel
 - HTML5
 - CSS
+- JavaScript
 - PHP
 - Bootstrap
 - XAMPP (with MySQL database)
